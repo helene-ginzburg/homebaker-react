@@ -1,38 +1,139 @@
-.App {
+/*
+font-family: 'Dancing Script', cursive;
+font-family: 'Great Vibes', cursive;
+font-family: 'Indie Flower', cursive;
+font-family: 'Lobster', cursive;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Pacifico', cursive;
+font-family: 'Parisienne', cursive;
+font-family: 'Playfair Display', serif;
+font-family: 'Sacramento', cursive;
+font-family: 'Sriracha', cursive;
+*/
+html, body, .parallax {
+  height: 100%;
+  margin: 0; }
+
+body {
+  font-family: "Open Sans", sans-serif; }
+
+.site-footer {
+  color: #ddd;
+  /*background-color: #6a6464;*/
+  background-image: linear-gradient(#504e4e, #ddd, #111); }
+
+.parallax {
+  /* Create the parallax scrolling effect */
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.bgimg-1 {
+  background-image: url("/assets/images/wheat-knurtsels-on-rye-leavens.jpg");
+  min-height: 900px; }
+
+.bgimg-2 {
+  background-image: url("/assets/images/wheat-coldrise-coldproofing-sliced-1.jpg");
+  min-height: 900px; }
+
+.bgimg-3 {
+  background-image: url("/assets/images/goldenstandard-sliced-2.jpg");
+  min-height: 900px; }
+
+  .livejournal-icon {
+    background-image: url("/assets/images/livejournalicon.png");
+    background-size: contain;
+  }
+
+  .website-icon {
+    background-image: url("/assets/images/websiteicon.png");
+    background-size: contain;
+  }
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
   text-align: center;
-}
+  color: #000; }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.caption span.border {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #f7f7f7;
+  padding: 70px;
+  font-size: 25px;
+  letter-spacing: 10px; }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+h1, h2, h3, h4, h5 {
+  font-family: "Dancing Script", cursive; }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+h6 {
+  font-family: "Pacifico", cursive;
+  /*font-style: italic;*/ }
 
-.App-link {
-  color: #61dafb;
-}
+.social-custom {
+  background-size: cover;
+  display: inline-block;
+  height: 15px;
+  width: 15px; }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+#carouselContainer {
+  background-color: #282E34; }
+
+/* Milti-item sliding carousel */
+/*
+CC 2.0 License Iatek LLC 2018
+Attribution required
+*/
+@media (min-width: 768px) {
+  /* show 3 items */
+  .carousel-inner .active,
+  .carousel-inner .active + .carousel-item,
+  .carousel-inner .active + .carousel-item + .carousel-item {
+    display: block; }
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+    transition: none;
+    margin-right: initial; }
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
+    position: relative;
+    transform: translate3d(0, 0, 0); }
+  .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+    position: absolute;
+    top: 0;
+    right: -33.3333%;
+    z-index: -1;
+    display: block;
+    visibility: visible; }
+  /* left or forward direction */
+  .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+  .carousel-item-next.carousel-item-left + .carousel-item,
+  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+    position: relative;
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible; }
+  /* farthest right hidden item must be abso position for animations */
+  .carousel-inner .carousel-item-prev.carousel-item-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    visibility: visible; }
+  /* right or prev direction */
+  .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+  .carousel-item-prev.carousel-item-right + .carousel-item,
+  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+    position: relative;
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+    display: block;
+    visibility: visible; } }
